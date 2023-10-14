@@ -29,7 +29,16 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/virtual.css">
   
   <link rel="stylesheet" type="text/css" href="./assets/css/topbar.virtual.css">
-  
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init("vWr4IGv0DRDvLMy8g");
+    })();
+  </script>
 </head>
 <body class="theme-red">
   
@@ -55,7 +64,6 @@
         <span class="color-item bg-theme-orange" data-class="theme-orange"></span>
         <span class="color-item bg-theme-purple" data-class="theme-purple"></span>
       </div>
-
     </div>
   </div>
   
@@ -374,15 +382,22 @@
       <div class="row py-5">
 
         <div class="col-lg-12">
-          <form action="mailto:gnlolugu@iu.edu" method="POST" enctype="text/plain" name="EmailForm" class="vg-contact-form">
+          <form class="vg-contact-form">
             <div class="form-row">
               <div class="col-12 mt-3 wow fadeInUp">
                 <input class="form-control" type="text" name="Name" placeholder="Your Name">
               </div>
+              <div class="col-6 mt-3 wow fadeInUp">
+                <input class="form-control" type="text" name="Email" placeholder="Email Address">
+              </div>
+              <div class="col-6 mt-3 wow fadeInUp">
+                <input class="form-control" type="text" name="Subject" placeholder="Subject">
+              </div>
               <div class="col-12 mt-3 wow fadeInUp">
                 <textarea class="form-control" name="Message" rows="6" placeholder="Enter message here.."></textarea>
               </div>
-              <button type="submit" value="Send" class="btn btn-theme mt-3 wow fadeInUp ml-1">Send Message</button>
+              <button type="submit" value="Send" onclick="sendMail()" class="btn btn-theme mt-3 wow fadeInUp ml-1">Send Message</button>
+
             </div>
           </form>
         </div>
@@ -441,8 +456,30 @@
   <script src="./assets/js/google-maps.js"></script>
     
   <script src="./assets/js/topbar-virtual.js"></script>
-  
-  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
 
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+  <script>
+    function sendMail(){
+      var params = {
+        Name: document.getElementsByName("Name").value,
+        Email: document.getElementsByName("Email").value,
+        Subject: document.getElementsByName("Subject").value,
+        Message: document.getElementsByName("Message").value,
+      };
+      const serviceID = "service_1cn3zs1";
+      const templateID = "template_knc2951";
+
+      emailjs.send(serviceID,templateID,params)
+      .then((
+        res)=>{
+          document.getElementByName("Name").value="";
+          document.getElementByName("Email").value="";
+          document.getElementByName("Subject").value="";
+          document.getElementByName("Message").value="";
+          console.log(res);
+        })
+        .catch((err)=> console.log(err));
+    }
+  </script>
 </body>
 </html>
