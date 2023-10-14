@@ -29,8 +29,6 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/virtual.css">
   
   <link rel="stylesheet" type="text/css" href="./assets/css/topbar.virtual.css">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   
 </head>
 <body class="theme-red">
@@ -398,25 +396,7 @@
                 <textarea class="form-control" name="Message" rows="6" placeholder="Enter message here.."></textarea>
               </div>
               <input type="hidden" name="_captcha" value="false">
-              <button type="submit" onclick="sendMail()" data-bs-toggle="modal" data-bs-target="#exampleModal" value="Send" class="btn btn-theme mt-3 wow fadeInUp ml-1">Send Message</button>
-
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Thank you!</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      Thanks for reaching out to me. I will get back to you soon!
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <button type="submit" onclick="sendMail()" value="Send" class="btn btn-theme mt-3 wow fadeInUp ml-1">Send Message</button>
             </div>
           </form>
         </div>
@@ -476,8 +456,6 @@
     
   <script src="./assets/js/topbar-virtual.js"></script>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script>
     function sendMail(){
       var params = {
@@ -497,6 +475,7 @@
           document.getElementByName("Subject").value="";
           document.getElementByName("Message").value="";
           console.log(res);
+          alert("Your message is sent successfully");
         })
         .catch((err)=> console.log(err));
     }
