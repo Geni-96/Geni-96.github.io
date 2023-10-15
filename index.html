@@ -388,13 +388,13 @@
                 <input class="form-control" type="text" id="name" placeholder="Your Name">
               </div>
               <div class="col-6 mt-3 wow fadeInUp">
-                <input class="form-control" type="text" name="Email" placeholder="Email Address">
+                <input class="form-control" type="text" id="Email" placeholder="Email Address">
               </div>
               <div class="col-6 mt-3 wow fadeInUp">
-                <input class="form-control" type="text" name="Subject" placeholder="Subject">
+                <input class="form-control" type="text" id="Subject" placeholder="Subject">
               </div>
               <div class="col-12 mt-3 wow fadeInUp">
-                <textarea class="form-control" name="Message" rows="6" placeholder="Enter message here.."></textarea>
+                <textarea class="form-control" id="Message" rows="6" placeholder="Enter message here.."></textarea>
               </div>
               <button type="submit" value="Send" onclick="sendMail()" class="btn btn-theme mt-3 wow fadeInUp ml-1">Send Message</button>
 
@@ -410,15 +410,24 @@
     <h1 class="text-center">Gnaneswari Lolugu</h1>
     <div class="container">
       <div class="row">
-        <div class="col-lg-5 py-3">
+        <div class="col-lg-4 py-3">
           <div class="footer-info">
             <p>Where to find me</p>
             <hr class="divider">
             <p class="fs-large fg-white">409 W Hoosier Court Ave, Bloomington, Indiana 47404 US</p>
           </div>
         </div>
-
-        <div class="col-lg-5 py-3">
+        <div class="col-md-6 col-lg-3 py-3">
+            <div class="float-lg-right">
+              <p>See my work</p>
+              <hr class="divider">
+              <ul class="list-unstyled">
+                <li><a href="https://www.linkedin.com/in/gnaneswari-lolugu/">LinkedIn</a></li>
+                <li><a href="https://github.com/Geni-96">Github</a></li>
+              </ul>
+            </div>
+          </div>
+        <div class="col-md-6 col-lg-3 py-3">
           <div class="float-lg-right">
             <p>Contact me</p>
             <hr class="divider">
@@ -458,6 +467,29 @@
   <script src="./assets/js/topbar-virtual.js"></script>
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+    function sendMail(){
+      var params = {
+        Name: document.getElementById("name").value,
+        Email: document.getElementById("Email").value,
+        Subject: document.getElementById("Subject").value,
+        Message: document.getElementById("Message").value,
+      };
+      const serviceID = "service_1cn3zs1";
+      const templateID = "template_knc2951";
+
+      emailjs.send(serviceID,templateID,params)
+      .then((
+        res)=>{
+          document.getElementById("name").value="";
+          document.getElementById("Email").value="";
+          document.getElementById("Subject").value="";
+          document.getElementById("Message").value="";
+          console.log(res);
+        })
+        .catch((err)=> console.log(err));
+      return false;
+    }
+  </script>
 </body>
 </html>
