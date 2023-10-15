@@ -472,10 +472,10 @@
       emailjs.send(serviceID,templateID,params)
       .then((
         res)=>{
-          document.getElementByName("Name").value="";
-          document.getElementByName("Email").value="";
-          document.getElementByName("Subject").value="";
-          document.getElementByName("Message").value="";
+          document.getElementsByName("Name").value="";
+          document.getElementsByName("Email").value="";
+          document.getElementsByName("Subject").value="";
+          document.getElementsByName("Message").value="";
           console.log(res);
         })
         .catch((err)=> console.log(err));
