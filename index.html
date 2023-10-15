@@ -385,7 +385,7 @@
           <form class="vg-contact-form">
             <div class="form-row">
               <div class="col-12 mt-3 wow fadeInUp">
-                <input class="form-control" type="text" name="Name" placeholder="Your Name">
+                <input class="form-control" type="text" id="name" placeholder="Your Name">
               </div>
               <div class="col-6 mt-3 wow fadeInUp">
                 <input class="form-control" type="text" name="Email" placeholder="Email Address">
@@ -461,7 +461,7 @@
   <script>
     function sendMail(){
       var params = {
-        Name: document.getElementsByName("Name").value,
+        Name: document.getElementById("name").value,
         Email: document.getElementsByName("Email").value,
         Subject: document.getElementsByName("Subject").value,
         Message: document.getElementsByName("Message").value,
@@ -472,7 +472,7 @@
       emailjs.send(serviceID,templateID,params)
       .then((
         res)=>{
-          document.getElementsByName("Name").value="";
+          document.getElementById("name").value="";
           document.getElementsByName("Email").value="";
           document.getElementsByName("Subject").value="";
           document.getElementsByName("Message").value="";
