@@ -336,16 +336,16 @@ a:hover, a:active {
     background-image: linear-gradient(to right, #f55745 0%, #8490ff 100%) !important;
 }
 
+.bg-theme-green {
+    background-color: #8cc63f !important;
+}
+
 .bg-theme-red {
     background-color: #ef3724 !important;
 }
 
 .bg-theme-blue {
     background-color: #2960f7 !important;
-}
-
-.bg-theme-green {
-    background-color: #8cc63f !important;
 }
 
 .bg-theme-orange {
@@ -356,16 +356,16 @@ a:hover, a:active {
     background-color: #6f42c1 !important;
 }
 
+.fg-theme-green {
+    color: #8cc63f !important;
+}
+
 .fg-theme-red {
     color: #ef3724 !important;
 }
 
 .fg-theme-blue {
     color: #2960f7 !important;
-}
-
-.fg-theme-green {
-    color: #8cc63f !important;
 }
 
 .fg-theme-orange {
