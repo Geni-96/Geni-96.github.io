@@ -1116,6 +1116,69 @@ a:hover, a:active {
 
 /* Theme color style */
 
+
+/* Theme Green */
+.theme-green .bg-theme {
+    background-color: #8cc63f !important;
+}
+
+.theme-green .fg-theme {
+    color: #8cc63f !important;
+}
+
+.theme-green .btn-theme {
+    background-color: #8cc63f;
+    color: #fff;
+}
+
+.theme-green .btn-theme:hover {
+    background-color: #94c751;
+    color: #fff;
+}
+
+.theme-green .btn-theme:focus {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #8cc63f;
+}
+
+.theme-green .btn-theme-outline {
+    color: #8cc63f;
+    box-shadow: 0 0 0 2px #8cc63f;
+}
+
+.theme-green .btn-theme-outline:hover {
+    background-color: #8cc63f;
+    color: #fff;
+}
+
+.theme-green .btn-theme-outline:focus {
+    background-color: #8cc63f;
+    color: #fff;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #8cc63f;
+}
+
+.theme-green .btn-fab {
+    background-color: #8cc63f;
+    color: #fff;
+}
+
+.theme-green .btn-fab:hover {
+    background-color: #94c751;
+    color: #fff;
+}
+
+.theme-green .progress {
+    box-shadow: 0 0 0 2px #8cc63f;
+}
+
+.theme-green .progress-bar {
+    background-color: #8cc63f;
+}
+
+.theme-green .theme-list li::before {
+    border-color: #8cc63f;
+}
+
+
 /* Theme red */
 .theme-red .bg-theme {
     background-color: #EF3724 !important;
@@ -1239,67 +1302,6 @@ a:hover, a:active {
     border-color: #2960f7;
 }
 
-
-/* Theme Green */
-.theme-green .bg-theme {
-    background-color: #8cc63f !important;
-}
-
-.theme-green .fg-theme {
-    color: #8cc63f !important;
-}
-
-.theme-green .btn-theme {
-    background-color: #8cc63f;
-    color: #fff;
-}
-
-.theme-green .btn-theme:hover {
-    background-color: #94c751;
-    color: #fff;
-}
-
-.theme-green .btn-theme:focus {
-    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #8cc63f;
-}
-
-.theme-green .btn-theme-outline {
-    color: #8cc63f;
-    box-shadow: 0 0 0 2px #8cc63f;
-}
-
-.theme-green .btn-theme-outline:hover {
-    background-color: #8cc63f;
-    color: #fff;
-}
-
-.theme-green .btn-theme-outline:focus {
-    background-color: #8cc63f;
-    color: #fff;
-    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #8cc63f;
-}
-
-.theme-green .btn-fab {
-    background-color: #8cc63f;
-    color: #fff;
-}
-
-.theme-green .btn-fab:hover {
-    background-color: #94c751;
-    color: #fff;
-}
-
-.theme-green .progress {
-    box-shadow: 0 0 0 2px #8cc63f;
-}
-
-.theme-green .progress-bar {
-    background-color: #8cc63f;
-}
-
-.theme-green .theme-list li::before {
-    border-color: #8cc63f;
-}
 
 
 /* Theme Orange */
